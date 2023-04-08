@@ -1,0 +1,111 @@
+.basket{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    z-index: 5;
+    padding: 1rem;
+  
+    
+}
+
+
+
+
+/* showBasket */
+
+.basket_background{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgb(0,0,0,.5);
+    z-index:2000;
+    scroll-behavior: smooth;
+}
+.show_basket{
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    transform: translateY(-50%,50%) ;
+    background: #26A69A;
+    width: 50rem;
+    max-width: 95%;
+    box-shadow: 1px 16px 22px 1px rgb(161, 161, 161);
+    z-index: 1000;
+    animation: show 0.5s ease-in-out;
+    
+
+}
+
+.close_tag{
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+.icons_send{
+    position: absolute;
+    right: 0;
+    bottom: 0.5rem;
+    color:rgb(0, 255, 213);
+    background-color:#26A69A;
+    border: none;
+
+    
+}
+.send_icon{
+    
+    position: relative;
+    color: rgb(250, 255, 255);
+    
+}
+.material-icons{
+    cursor: pointer;
+}
+
+.list_type{
+    position: relative;
+    background-color: #26A69A;
+    border: 1px solid #26A69A;
+    list-style:none
+}
+
+.btn{
+    position: relative;
+    bottom: 7px;
+}
+
+.btn{
+    margin-right: 4px;
+}
+
+@keyframes show{
+    from{top:70%;  opacity: 0;}
+    to{top:30%; opacity:1;}
+}
+
+@media (min-width: 767px) {
+    .basket {
+        bottom: unset;
+        top: 8rem;
+        right: 5rem;
+        border-radius: 5px;
+    }
+
+   
+
+}
+
+@media (max-width: 767px) {
+    .show_basket {
+            top: 20%;
+            left:2%;
+            
+           
+    
+        }
+}

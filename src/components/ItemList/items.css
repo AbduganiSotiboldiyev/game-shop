@@ -1,0 +1,84 @@
+.game_list{
+    display: flex;
+    margin-top: 4rem;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+.game_items{
+    position: relative;
+    background: none;
+    margin-bottom: 8rem;
+    border:none;
+    max-width: 24rem;
+    
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    box-sizing: border-box;
+    box-shadow: 11px 0px 44px 0px rgba(63, 61, 61, 0.363);
+}
+.card_title{
+    color:rgb(142, 27, 250);
+    font-size: 18px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.item_img{
+    height: 40vh;
+    max-width: 22rem;
+   
+    filter: brightness(50%);
+    border: none;
+   
+}
+.item_img:hover{
+    filter:brightness(100%);
+    translate: rotate(45deg);
+    transform: scale(1.1,1);
+    transition: all 0.5s ease-in-out;
+}
+
+.item_card{
+    
+    border-radius: 20px;
+    border-top-left-radius: 0;
+    
+}
+.card_footer{
+    display: flex;
+    align-items: center;
+    /* font-size: 16px; */
+    margin: 0 2rem;
+    padding-bottom: 1rem;
+    justify-content: space-between;
+    font-size: 18px;
+        font-weight: 900;
+}
+
+.item_price{
+    font-size: 18px;
+    font-weight: 600;
+    color:rgb(142, 27, 250)
+}
+
+.item_btn{
+    position: relative;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    font-size:18px;
+    border: 1px solid rgb(234, 234, 240);
+    border-radius: 8px;
+    text-transform:capitalize;
+    background-color:white
+}
+
+.item_btn:hover{
+    background-color:#F44336;
+    transform: scale(1.1,1.1);
+    color:rgb(255, 255, 255);
+    transition:all 0.5s ease
+}
