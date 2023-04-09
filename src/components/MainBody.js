@@ -8,16 +8,18 @@ import ShowBasket from "./basket/ShowBasket";
 import {toast} from "react-toastify"
 
 
-function MainBody() {
+
+function MainBody({language}) {
 
     const [goods,setData] = useState([])
     const[isLoading,setLoading] = useState(false),
         [order,setOrder] = useState([]),
         [isShowBasket, setShowBasket] = useState(false);
+     
     
 
     useEffect(() =>{
-        fetch(API_URL,{
+        fetch(language ? `${API_URL} + lang=ru` : `${API_URL} + lang=en` ,{
             headers: {
                 Authorization:API_KEY
             }
@@ -27,7 +29,7 @@ function MainBody() {
             setLoading(true)
         })
        
-    },[]);
+    },[language]);
 
     // add new item
     const addToBasket = (item) => {
@@ -54,6 +56,10 @@ function MainBody() {
         }
         toast.success("Item added successfully")
     }
+
+    // //
+
+    //  //
     // removing item
   const removeFromBasket = (itemId) => {
     const newOrder = order.filter(item => item.id !== itemId)
@@ -100,14 +106,17 @@ function MainBody() {
         setOrder(newOrder)
     }
 
+    // 
+
     return (
         <div className="main_body container">
             <Basket quantity ={order.length } handleShowBasket={handleShowBasket}/>
-            
+
             {isLoading ? 
-            <GameList goods ={goods}  addToBasket = {addToBasket}/>  :
+            <GameList goods ={goods}  addToBasket = {addToBasket} />  :
             <IsLoading/>
             }
+            
             {isShowBasket && 
             <ShowBasket 
             order = {order} 

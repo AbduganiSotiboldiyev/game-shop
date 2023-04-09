@@ -1,4 +1,4 @@
-const API_URL = " https://fortniteapi.io/v1/shop?lang=en",
+const API_URL = " https://fortniteapi.io/v1/shop?",
     API_KEY = "0676987f-9359dc20-39067605-82e01bc3";
 
 
