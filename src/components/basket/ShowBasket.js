@@ -1,8 +1,13 @@
+import { useContext } from "react"
+import { shoppingCart } from "../context/Context"
 import ShowBasketItem from "./ShowBasketItem"
 import './basket.css'
 
-export default function ShowBasket(props) {
-    const{order,handleShowBasket=Function.prototype,removeFromBasket =Function.prototype,incrementItem,decrementItem} = props
+export default function ShowBasket() {
+
+    const {order,handleShowBasket} = useContext(shoppingCart)
+
+    // const{removeFromBasket =Function.prototype,incrementItem,decrementItem} = props
     const totalPrice = order.reduce((sum, item) =>{
         return sum + item.price * item.numberItems
         
@@ -15,7 +20,7 @@ export default function ShowBasket(props) {
                     <li className="collection-item active list_type">Basket</li>
                     {order.length ? (order.map(item => {
                         return(
-                            <ShowBasketItem  key={item.id} {...item} removeFromBasket={removeFromBasket} incrementItem={incrementItem} decrementItem={decrementItem}/>
+                            <ShowBasketItem  key={item.id} {...item}/>
                             )
                     })) : (<li>Basket is emmpty</li>) }
                     <li className="collection-item active list_type">Total price: ${totalPrice}

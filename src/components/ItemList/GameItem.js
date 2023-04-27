@@ -1,5 +1,8 @@
+import { useContext } from 'react'
+import { shoppingCart } from '../context/Context'
 import './items.css'
-export default function GameItem({id,name,description,price,image,buyStaff}) {
+export default function GameItem({id,name,description,price,image}) {
+    const {addToBasket} = useContext(shoppingCart)
 
     return (
          <div className="row game_items" id={id}>
@@ -17,7 +20,7 @@ export default function GameItem({id,name,description,price,image,buyStaff}) {
                 <div className="card_footer">
                     <span className="item_price">{price}$</span>
                     
-                    <button className="item_btn" onClick={() => buyStaff({id,name,price})}>buy</button>
+                    <button className="item_btn" onClick={() => addToBasket({id,name,price})}>buy</button>
                 </div>
             </div>
             </div>

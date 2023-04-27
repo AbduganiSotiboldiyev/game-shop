@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import { shoppingCart } from "../context/Context";
 export default function ShowBasketItem(props) {
-    const  {id,name,price,numberItems, removeFromBasket,incrementItem,decrementItem} = props;
+    const  {id,name,price,numberItems} = props;
+    const {incrementItem,decrementItem,removeFromBasket} = useContext(shoppingCart)
 
+
+  
     return(
       <div className=" show_basket_items ">
         <li className="collection-item list_type" id={id}>
